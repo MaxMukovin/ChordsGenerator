@@ -1,7 +1,14 @@
 # ChordsGenerator
-[Методичка (все аккорды)](https://www.youtube.com/watch?v=KY4OZUMl46U&t=1s)
+
 ### Цель
 Создание веб-приложения для генерации любого аккорда, отображения нот, входящих в данный аккорд и визуализации на клавиатуре фортепиано и грифе гитары (при различных строях).
+
+### Задачи ([Issues](https://github.com/MaxMukovin/ChordsGenerator/issues))
+- [ ] [Описать логику построения всех аккордов](https://github.com/MaxMukovin/ChordsGenerator/issues/2);
+- [ ] [Дописать Readme в части заполнения аккордов](https://github.com/MaxMukovin/ChordsGenerator/issues/1)
+- [ ] [Создать мокап компонентов в ландшафтном (desktop) и портретном (phone) режимах](https://github.com/MaxMukovin/ChordsGenerator/issues/3)
+
+
 ## Реализация
 ### Технологии
 Веб-приложение должно быть написано с использованием:
