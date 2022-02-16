@@ -3,7 +3,7 @@
 ### Цель
 Создание веб-приложения для генерации любого аккорда, отображения нот, входящих в данный аккорд и визуализации на клавиатуре фортепиано и грифе гитары (при различных строях).
 
-[Методичка по аккордам](https://github.com/MaxMukovin/ChordsGenerator/edit/main/Methodology.md)
+[Методичка по аккордам](https://github.com/MaxMukovin/ChordsGenerator/blob/main/Methodology.md)
 
 ### Задачи ([Issues](https://github.com/MaxMukovin/ChordsGenerator/issues))
 
