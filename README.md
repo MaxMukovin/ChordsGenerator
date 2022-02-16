@@ -8,7 +8,7 @@
 ### Задачи ([Issues](https://github.com/MaxMukovin/ChordsGenerator/issues))
 
 - [x] [Описать логику построения всех аккордов](https://github.com/MaxMukovin/ChordsGenerator/issues/2);
-- [ ] [Дописать Readme в части заполнения аккордов](https://github.com/MaxMukovin/ChordsGenerator/issues/1)
+- [x] [Дописать Readme в части заполнения аккордов](https://github.com/MaxMukovin/ChordsGenerator/issues/1)
 - [ ] [Создать мокап компонентов в ландшафтном (desktop) и портретном (phone) режимах](https://github.com/MaxMukovin/ChordsGenerator/issues/3)
 
 
