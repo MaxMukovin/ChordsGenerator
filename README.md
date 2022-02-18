@@ -12,6 +12,8 @@
 
 [Прототип](https://github.com/MaxMukovin/ChordsGenerator/blob/main/Prototype/ChordsGenerator.xlsm)
 
+[Мокап](https://github.com/MaxMukovin/ChordsGenerator/blob/main/Mockup/UX.UI.md)
+
 ### Задачи ([Issues](https://github.com/MaxMukovin/ChordsGenerator/issues))
 
 - [x] [Разработать прототип приложения](https://github.com/MaxMukovin/ChordsGenerator/blob/main/Prototype/ChordsGenerator.xlsm)
