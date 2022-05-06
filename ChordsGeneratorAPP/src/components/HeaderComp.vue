@@ -6,7 +6,7 @@
 </template>
 
 
-<script setup>
+<script>
 
 </script>
 

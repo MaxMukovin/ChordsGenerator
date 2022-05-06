@@ -1,21 +1,56 @@
 <template>
-  <div class="main">
-    <p>Как же я заколебался это всё ровнять...</p>
-    <!-- <Piano/> <p>or</p>
-    <Guitar/> -->
+  <div class="chord">
+    <p>{{textChord}}</p>
   </div>
 </template>
 
 
-<script setup>
+<script>
 import Piano from './Piano.vue'
 import Guitar from './Guitar.vue'
+
+export default {
+  name: "instrument",
+  components: {
+    Piano,
+    Guitar
+  },
+  props: {
+    currentChord: {}
+  },
+  data() {
+    return {
+    }
+  },
+  computed: {
+    textChord: function () {
+      var tone = this.currentChord.tone
+      var accidental = this.currentChord.accidental
+      var minor = this.currentChord.minor
+      var chord = this.currentChord.chord
+
+      if (accidental == "0") {
+        accidental = "";
+      }
+      if (minor == true) {
+        minor = "m";
+      } else {
+        minor = "";
+      }
+      return `${tone}${accidental}${minor}${chord}`
+    }
+  }
+}
+
+
+
 
 </script>
 
 
 <style scoped>
-.main{
+.chord{
+  font-size: 2em;
   float: left;
   height: 63vh;
   width: 100%;
