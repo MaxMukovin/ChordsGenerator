@@ -20,6 +20,10 @@ export default {
   },
   data() {
     return {
+      testData: {
+        row1: ["1", "2", "3", "4", "5"],
+        row2: ["6", "7", "8", "9", "10"],
+      }
     }
   },
   computed: {
@@ -42,21 +46,16 @@ export default {
   }
 }
 
-
-
-
 </script>
 
 
 <style scoped>
-.chord{
+.chord {
   font-size: 2em;
   float: left;
-  height: 63vh;
   width: 100%;
   text-align: center;
   vertical-align:middle;
   display:table-cell;
 }
-
 </style>

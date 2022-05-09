@@ -27,7 +27,7 @@ export default {
   props: {},
   data() {
     return {
-      currentChord: {tone: "G", accidental: "#", minor: true, chord: "sus2"}
+      currentChord: {tone: "C", accidental: "", minor: false, chord: ""}
     }
   },
   methods: {
@@ -47,10 +47,28 @@ export default {
         this.currentChord.minor = false
       } else {
         this.currentChord.minor = true
-      }
+      };
+      if (this.currentChord.chord == "sus2"
+       || this.currentChord.chord == "sus4"
+       || this.currentChord.chord == "sus#4"
+       || this.currentChord.chord == "5"
+       || this.currentChord.chord == "dim7"
+          )
+        this.currentChord.chord = ''
     },
     changeChord(param) {
-      this.currentChord.chord = param
+      if (this.currentChord.chord == param) {
+        this.currentChord.chord = ''
+      } else {
+        this.currentChord.chord = param
+      };
+      if (this.currentChord.chord == "sus2"
+       || this.currentChord.chord == "sus4"
+       || this.currentChord.chord == "sus#4"
+       || this.currentChord.chord == "5"
+       || this.currentChord.chord == "dim7"
+          )
+        this.currentChord.minor = false
     },
   },
   computed: {}
