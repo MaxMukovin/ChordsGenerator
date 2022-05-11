@@ -10,138 +10,134 @@
           @click="changeTone(n)"
           >{{n}}</button>
 
-          <div class="sep cell"></div>
+          <div class="sep"></div>
 
           <button type="button" class="button nightMode cell"
           v-for="n in notes.accidentals"
           :class="{'active':n==this.currentChord.accidental}"
           @click="changeAccidentals(n)"
           >{{n}}</button>
+
         </div>
       </div>
     </div>
     <div class="block">
       <div class="title">Аккорд</div>
       <div class="ButtonsGroup">
-        <div class="row">
-          <div class="cell">
-            <div class="vertical">
+        <div class="cell">
+          <div class="vertical">
+            <button type="button" class="button nightMode"
+            v-for="n in chords.minor"
+            :class="{'active':this.currentChord.minor}"
+            @click="changeMinor(n)"
+            >{{n}}</button>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="vertical"><button type="button" class="button nightMode"
+            v-for="n in chords.step2"
+            :class="{'active':n==this.currentChord.chord}"
+            @click="changeChord(n)"
+            >{{n}}</button>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="vertical"><button type="button" class="button nightMode"
+            v-for="n in chords.step4[0]"
+            :class="{'active':n==this.currentChord.chord}"
+            @click="changeChord(n)"
+            >{{n}}</button>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="vertical"><button type="button" class="button nightMode"
+            v-for="n in chords.step4[1]"
+            :class="{'active':n==this.currentChord.chord}"
+            @click="changeChord(n)"
+            >{{n}}</button>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="vertical">
+            <div class="horizontal">
+              <button type="button" class="button nightMode wider43"
+              v-for="n in chords.step5[0]"
+              :class="{'active':n==this.currentChord.chord}"
+              @click="changeChord(n)"
+              >{{n}}</button>
+            </div>
+            <button type="button" class="button nightMode"
+            v-for="n in chords.step5[1]"
+            :class="{'active':n==this.currentChord.chord}"
+            @click="changeChord(n)"
+            >{{n}}</button>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="vertical"><button type="button" class="button nightMode"
+            v-for="n in chords.step6"
+            :class="{'active':n==this.currentChord.chord}"
+            @click="changeChord(n)"
+            >{{n}}</button>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="vertical">
+            <div>
               <button type="button" class="button nightMode"
-              v-for="n in chords.minor"
-              :class="{'active':this.currentChord.minor}"
-              @click="changeMinor(n)"
-              >{{n}}</button>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="vertical"><button type="button" class="button nightMode"
-              v-for="n in chords.step2"
+              v-for="n in chords.step7[0]"
               :class="{'active':n==this.currentChord.chord}"
               @click="changeChord(n)"
               >{{n}}</button>
             </div>
+            <button type="button" class="button nightMode"
+            v-for="n in chords.step7[1]"
+            :class="{'active':n==this.currentChord.chord}"
+            @click="changeChord(n)"
+            >{{n}}</button>
           </div>
-          <div class="cell">
-            <div class="vertical"><button type="button" class="button nightMode"
-              v-for="n in chords.step4[0]"
+        </div>
+        <div class="cell">
+          <div class="vertical">
+            <div class="horizontal">
+              <button type="button" class="button nightMode wider44"
+              v-for="n in chords.step9[0]"
               :class="{'active':n==this.currentChord.chord}"
               @click="changeChord(n)"
               >{{n}}</button>
             </div>
-          </div>
-          <div class="cell">
-            <div class="vertical"><button type="button" class="button nightMode"
-              v-for="n in chords.step4[1]"
-              :class="{'active':n==this.currentChord.chord}"
-              @click="changeChord(n)"
-              >{{n}}</button>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="vertical">
-              <div class="horizontal">
-                <button type="button" class="button nightMode wider43"
-                v-for="n in chords.step5[0]"
-                :class="{'active':n==this.currentChord.chord}"
-                @click="changeChord(n)"
-                >{{n}}</button>
-              </div>
+            <div>
               <button type="button" class="button nightMode"
-              v-for="n in chords.step5[1]"
-              :class="{'active':n==this.currentChord.chord}"
-              @click="changeChord(n)"
-              >{{n}}</button>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="vertical"><button type="button" class="button nightMode"
-              v-for="n in chords.step6"
+              v-for="n in chords.step9[1]"
               :class="{'active':n==this.currentChord.chord}"
               @click="changeChord(n)"
               >{{n}}</button>
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="cell">
-            <div class="vertical">
-              <div>
-                <button type="button" class="button nightMode"
-                v-for="n in chords.step7[0]"
-                :class="{'active':n==this.currentChord.chord}"
-                @click="changeChord(n)"
-                >{{n}}</button>
-              </div>
+        <div class="cell">
+          <div class="vertical">
+            <div>
               <button type="button" class="button nightMode"
-              v-for="n in chords.step7[1]"
+              v-for="n in chords.step11[0]"
               :class="{'active':n==this.currentChord.chord}"
               @click="changeChord(n)"
               >{{n}}</button>
             </div>
+            <button type="button" class="button nightMode"
+            v-for="n in chords.step11[1]"
+            :class="{'active':n==this.currentChord.chord}"
+            @click="changeChord(n)"
+            >{{n}}</button>
           </div>
-          <div class="cell">
-            <div class="vertical">
-              <div class="horizontal">
-                <button type="button" class="button nightMode wider44"
-                v-for="n in chords.step9[0]"
-                :class="{'active':n==this.currentChord.chord}"
-                @click="changeChord(n)"
-                >{{n}}</button>
-              </div>
-              <div>
-                <button type="button" class="button nightMode"
-                v-for="n in chords.step9[1]"
-                :class="{'active':n==this.currentChord.chord}"
-                @click="changeChord(n)"
-                >{{n}}</button>
-              </div>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="vertical">
-              <div>
-                <button type="button" class="button nightMode"
-                v-for="n in chords.step11[0]"
-                :class="{'active':n==this.currentChord.chord}"
-                @click="changeChord(n)"
-                >{{n}}</button>
-              </div>
-              <button type="button" class="button nightMode"
-              v-for="n in chords.step11[1]"
-              :class="{'active':n==this.currentChord.chord}"
-              @click="changeChord(n)"
-              >{{n}}</button>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="vertical">
-              <button type="button" class="button nightMode"
-              v-for="n in chords.step13"
-              :class="{'active':n==this.currentChord.chord}"
-              @click="changeChord(n)"
-              >{{n}}</button>
-            </div>
+        </div>
+        <div class="cell">
+          <div class="vertical">
+            <button type="button" class="button nightMode"
+            v-for="n in chords.step13"
+            :class="{'active':n==this.currentChord.chord}"
+            @click="changeChord(n)"
+            >{{n}}</button>
           </div>
         </div>
       </div>
@@ -200,8 +196,6 @@ export default {
   float: left;
   width: 100%;
   text-align: center;
-  vertical-align:middle;
-  display:table-cell;
 }
 .block {
   width: 100vw;
@@ -213,15 +207,15 @@ export default {
   padding: 10px;
 }
 .ButtonsGroup {
+  justify-content: center;
   margin: 0 auto;
   overflow: hidden;
   text-align: center;
+  display: flex;
   display: table;
 }
 .row {
-  float: left;
-  margin: 0 auto;
-  overflow: hidden;
+  display: flex
 }
 @media screen and (orientation: portrait){
   .row {float: none;}}
@@ -252,12 +246,13 @@ export default {
   cursor: pointer;
   border-radius: 5px;
   margin: 3px;
-  padding: 7px;
   min-width: 29px;
+  min-height: 38px;
 }
 .sep {
-  border-right: 1.5px solid #ffffff;
+  float: left;
   margin: 7px 5px 7px 4px;
+  border-right: 1.5px solid #ffffff;
 }
 .active {
   background: #eee;
