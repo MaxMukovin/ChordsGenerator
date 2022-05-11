@@ -99,7 +99,7 @@
 11. Переключение дневного/ночного режима. Отключение автоматизации. Выбор времени начала/окончания ночного режима.
 
 ## Интерфейс
-![FullHD 1920x1080 Day](https://github.com/MaxMukovin/ChordsGenerator/blob/main/Mockup/FullHD%20%5BDay%5D.png)
+![FullHD 1920x1080](https://github.com/MaxMukovin/ChordsGenerator/blob/main/Mockup/FullHD_Piano.jpg)
 
 
 ## Использование приложения
