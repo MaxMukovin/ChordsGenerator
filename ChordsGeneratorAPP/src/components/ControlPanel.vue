@@ -204,14 +204,13 @@ export default {
 }
 .title {
   text-align: center;
-  padding: 10px;
+  margin: 10px;
 }
 .ButtonsGroup {
   justify-content: center;
-  margin: 0 auto;
+  margin: 10px auto;
   overflow: hidden;
   text-align: center;
-  display: flex;
   display: table;
 }
 .row {
@@ -246,8 +245,8 @@ export default {
   cursor: pointer;
   border-radius: 5px;
   margin: 3px;
+  padding: 7px;
   min-width: 29px;
-  min-height: 38px;
 }
 .sep {
   float: left;
