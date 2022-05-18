@@ -6,10 +6,10 @@
       @click="changeInst('Piano')"
       >Пианино</button>
 
-      <button type="button" class="button"
+      <!-- <button type="button" class="button"
       :class="{'active':this.currentInst=='Guitar'}"
       @click="changeInst('Guitar')"
-      >Гитара</button>
+      >Гитара</button> -->
     </div>
     <Piano
     v-if="this.currentInst=='Piano'"
@@ -67,12 +67,12 @@ export default {
       if (accidental == "0") {
         accidental = "";
       }
-      if (minor == true) {
+      if (minor) {
         minor = "m";
       } else {
         minor = "";
       }
-      return `${tone}${accidental}${minor}${chord}`
+      return `${tone}${accidental}${minor} ${chord}`
     },
   }
 }

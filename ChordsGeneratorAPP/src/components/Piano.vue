@@ -3,12 +3,17 @@
     <div class="keyboard">
       <div class="note"
       v-for="n in this.notes.length"
-      :class="{mainTone:classMainTone(n, this.notes),chordTone:classChordTone(n, this.notes)}"
+      :class="{mainTone:classMainTone(n, this.notes),
+               chordTone:classChordTone(n, this.notes, 1, 0),
+               optionalTone:classChordTone(n, this.notes, this.stepsInChord.indexOf('|'), 0)}"
       >{{}}</div>
       <div class="sharps">
         <div class="sharp"
         v-for="n in this.sharps.length"
-        :class="{mainTone:classMainTone(n, this.sharps),chordTone:classChordTone(n, this.sharps),none:n==3||n==7||n==10}"
+        :class="{mainTone:classMainTone(n, this.sharps),
+                 chordTone:classChordTone(n, this.sharps, 1, 0),
+                 optionalTone:classChordTone(n, this.sharps, this.stepsInChord.indexOf('|'), 0),
+                 none:n==3||n==7||n==10}"
         >{{}}</div>
       </div>
     </div>
@@ -22,6 +27,7 @@ export default {
   components: {},
   props: {
     notesInChord: {},
+    stepsInChord: {},
     allNotes: {},
   },
   data() {
@@ -31,12 +37,12 @@ export default {
     }
   },
   methods: {
-    classMainTone (param, paramArray) {
+    classMainTone (param, paramArray) { // Подствечиваем основной тон
       if (this.notesInChord[0]==paramArray[param-1] && param<8 )
         {return true}
       },
-    classChordTone (param, paramArray) {
-      for (var i = 1; i < this.notesInChord.length; i++) {
+    classChordTone (param, paramArray, startFor, stopFor) { // Подсвечиваем ноты аккорда
+      for (var i = startFor; i < this.notesInChord.length-stopFor; i++) {
         if (this.notes.indexOf(this.notesInChord[0])>=0 // индекс основного тона в массиве
             && this.notesInChord[i]==paramArray[param-1] // нота аккорда == нота в массиве
             && param>this.notes.indexOf(this.notesInChord[0])
@@ -46,7 +52,8 @@ export default {
             && this.notesInChord[i]==paramArray[param-1] // нота аккорда == нота в массиве
             && param>this.sharps.indexOf(this.notesInChord[0])
             && param<this.sharps.indexOf(this.notesInChord[0])+8
-        ) {return true}
+        ) {
+          return true}
       }
     },
   },
@@ -64,6 +71,7 @@ export default {
 }
 p {color: red}
 .keyboard {
+  width: 588px;
   position: relative;
   color: #696969;
   padding: 8px;
@@ -76,7 +84,6 @@ p {color: red}
 }
 .note {
   transition: all .5s;
-
   float: left;
   height: 150px;
   width: 40px;
@@ -102,5 +109,6 @@ p {color: red}
 }
 .mainTone {background: #81A6BB;}
 .chordTone {background: #95D9FF;}
+.optionalTone {background: #ccc;}
 
 </style>

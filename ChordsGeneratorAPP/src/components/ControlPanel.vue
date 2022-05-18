@@ -194,7 +194,7 @@ export default {
 <style scoped>
 .main{
   float: left;
-  width: 100%;
+  width: 100vw;
   text-align: center;
 }
 .block {
