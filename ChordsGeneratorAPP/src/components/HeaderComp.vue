@@ -23,6 +23,7 @@ header {
   padding: 10px;
 }
 .about {
+  display: none;
   transition: all .3s;
   cursor: pointer;
   padding: 10px;

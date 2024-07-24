@@ -45,13 +45,14 @@ export default {
       for (var i = startFor; i < this.notesInChord.length-stopFor; i++) {
         if (this.notes.indexOf(this.notesInChord[0])>=0 // индекс основного тона в массиве
             && this.notesInChord[i]==paramArray[param-1] // нота аккорда == нота в массиве
-            && param>this.notes.indexOf(this.notesInChord[0])
-            && param<this.notes.indexOf(this.notesInChord[0])+8
-        ) {return true} else if (
+            && param>this.notes.indexOf(this.notesInChord[0])+1
+            && param<this.notes.indexOf(this.notesInChord[0])+9
+        ) {return true} 
+        else if ( 
             this.sharps.indexOf(this.notesInChord[0])>=0
             && this.notesInChord[i]==paramArray[param-1] // нота аккорда == нота в массиве
-            && param>this.sharps.indexOf(this.notesInChord[0])
-            && param<this.sharps.indexOf(this.notesInChord[0])+8
+            && param>this.sharps.indexOf(this.notesInChord[0])+1
+            && param<this.sharps.indexOf(this.notesInChord[0])+9
         ) {
           return true}
       }

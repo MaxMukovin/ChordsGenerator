@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="guitar">
     {{notesChord}} <br>
     {{a}} <br>
     {{b}}
@@ -43,4 +43,7 @@ export default {
 
 
 <style>
+.guitar {
+  text-align: center;
+}
 </style>

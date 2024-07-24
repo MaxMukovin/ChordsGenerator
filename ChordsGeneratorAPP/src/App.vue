@@ -65,25 +65,33 @@ export default {
     }
   },
   created() {
-    this.currentChord.tone = this.readCookie('tone');
-    this.currentChord.accidental = this.readCookie('accidental');
-    if (this.readCookie('minor')=='true') {
-      this.currentChord.minor = true;
-    } else {this.currentChord.minor = false;}
-    this.currentChord.chord = this.readCookie('chord');
-    this.createChord();
+
+    if (this.readCookie('tone') != undefined ) { //если cookie непустые - читаем
+      this.currentChord.tone = this.readCookie('tone');
+    
+      if (this.readCookie('minor')=='true') {
+        this.currentChord.minor = true;
+      } else {this.currentChord.minor = false;}
+      this.currentChord.chord = this.readCookie('chord');
+      if (this.readCookie('accidental') == 'b') {
+        this.currentChord.accidental = '♭';
+      } else {
+        this.currentChord.accidental = this.readCookie('accidental');
+      }
+    }
+    this.createChord(); //создаём аккорд
   },
 
   methods: {
     writeCookeiCurrentChord() {
       this.writeCookie('tone', this.currentChord.tone, 30);
-      this.writeCookie('accidental', this.currentChord.accidental, 30);
       this.writeCookie('minor', this.currentChord.minor, 30);
       this.writeCookie('chord', this.currentChord.chord, 30);
-      //
-      // console.log('tone - '+this.readCookie('tone'));
-      // console.log('accidental - '+this.readCookie('accidental'));
-      // console.log('chord - '+this.readCookie('chord'));
+      if (this.currentChord.accidental == '♭') {
+        this.writeCookie('accidental', 'b', 30);
+      } else {
+        this.writeCookie('accidental', this.currentChord.accidental, 30);
+      }
     },
     writeCookie(name, val, expires) {
       var date = new Date;
